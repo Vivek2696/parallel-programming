@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <chrono>
 #include "../openmp/helper.cpp"
+#include "../openmp/tree_depth.cpp"
 using namespace std::chrono;
 
 node* create_subtree(unsigned nodes) {
@@ -21,5 +22,23 @@ node* create_subtree(unsigned nodes) {
 
 int main(int argc, char* argv[])
 {
-    //TODO - Add benchmark
+    if(argc < 2){
+        std::cout << "Must specify the number of nodes to be created." <<std::endl;
+        exit(1);
+    }
+    if(argc > 2){
+        srand(atoi(argv[2]));
+    }
+
+    unsigned nodes = atoi(argv[1]);
+    node *root = create_subtree(nodes);
+
+    //time the run of the "compute_depth"
+    high_resolution_clock::time_point begin = high_resolution_clock::now();
+    int depth = compute_depth(root);
+    high_resolution_clock::time_point end = high_resolution_clock::now();
+
+    duration<double> duration = duration_cast<microseconds>(end - begin);
+    std::cout << nodes << " nodes took " << duration.count() << " seconds. " << std::endl;
+    std::cout << "Found depth of " << depth << std::endl;
 }
