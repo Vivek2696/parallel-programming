@@ -7,5 +7,5 @@ struct thread_info_struct
     int end;
     int *array;
     pthread_t thread_id;
-    int partal_sum;
+    int partial_sum;
 };
