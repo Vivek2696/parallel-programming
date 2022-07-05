@@ -7,6 +7,10 @@ Overview of the repo
 2. pthreads: simple multithreading
 3. MPI: Distributed memory program
 
+TBD:
+4. Advance MPI
+  - Prefix sum matrix 
+  - one-sided MPI 
 
 Sample Runs:
 
