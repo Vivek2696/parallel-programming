@@ -1,11 +1,21 @@
 # parallel-programming
 OpenMP | pthreads | MPI
 
-This repo is under construction
+Overview of the repo
 
 1. OpenMP: recursive parallelism
 2. pthreads: simple multithreading
 3. MPI: Distributed memory program
 
 
-To be continued...
+Sample Runs:
+
+1. This code assumes the tree is full binary tree and finds the depth of tree using openmp recursive parallelism:
+  - 
+
+2. This is shared memory program using pthreads that computes the average distribution in parallel, by breaking the array A into smaller chuncks:
+  -
+
+3. This code implements the MPI reduction collective operation such that the root process (rank 0) sum value will have the sum of each of the P process' local value:
+  - 
+
